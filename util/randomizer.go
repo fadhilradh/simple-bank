@@ -21,5 +21,22 @@ func GenerateRandomStr(n int) string {
 
 	strLength := len(alphabet)
 
-	// for i := 0; i< n; i++
+	for i := 0; i< n; i++ {
+		c := alphabet[rand.Intn(strLength)]
+		sb.WriteByte(c)
+	}
+	return sb.String()
+}
+
+func GenerateRandomBalance() int64 {
+	return GenerateRandomInt(0, 10000000)
+}
+
+func GenerateRandomOwner() string {
+	return GenerateRandomStr(6)
+}
+
+func GenerateRandomCurrency() string {
+	currencies := []string{"IDR", "MYR", "SGD"}
+	return currencies[rand.Intn(len(currencies))]
 }
